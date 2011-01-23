@@ -1,0 +1,89 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog id="msts-dict-prefs"
+  title="Tùy chọn Tra Từ"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  onload="getUserPref();"
+  ondialogaccept="return onOK();"
+  ondialogcancel="return onCancel();">
+
+<script type="application/x-javascript" src="chrome://kdict/content/global.js"/>
+<script type="application/x-javascript" src="chrome://kdict/content/options.js"/>
+<tabbox>
+    <tabs id="option-tabs">
+          <tab label="Tùy chọn Từ điển"/>
+	  <tab label="Công cụ"/>
+    </tabs>
+
+<tabpanels>
+  <!--tabpanel>
+  
+  <vbox>
+  
+  
+  <hbox>
+    <groupbox>
+	  <caption label="Panel" />
+	  <label value="Panel height(px)"/>
+  	  <textbox preference="pref-height-pane" id="height-pane"/>
+  	  
+  	  <label value="Panel width(px)"/>
+  	  <textbox preference="pref-width-pane" id="width-pane"/>
+    </groupbox>
+
+    <groupbox>
+	  <caption label="Font" />
+	  <label value="Font size(px)"/>
+  	  <textbox preference="pref-font-size" id="font-size"/>
+    </groupbox>
+  </hbox>
+  
+  <hbox>
+  <checkbox preference="pref-show-icon" id="show-icon"
+    label="Show the icon on the statusbar."/>
+  </hbox>
+  
+  </vbox>
+  
+  </tabpanel-->
+  
+  
+  
+  <tabpanel>
+  <vbox>
+  <groupbox>
+    <caption label="Tra Từ" />
+      <radiogroup id="dict-grp">
+      <radio id="en_vn" value="en_vn" label="Anh-Việt"/>
+      <radio id="vn_en" value="vn_en" label="Việt-Anh"/>
+      <radio id="jp_vn" value="jp_vn" label="Nhật-Việt"/>
+      <radio id="vn_jp" value="vn_jp" label="Việt-Nhật"/>
+      <radio id="jp_en" value="jp_en" label="Nhật-Anh"/>
+      <radio id="en_jp" value="en_jp" label="Anh-Nhật"/>
+      <radio id="fr_vn" value="fr_vn" label="Pháp-Việt"/>
+      <radio id="vn_fr" value="vn_fr" label="Việt-Pháp"/>
+      <radio id="vn_vn" value="vn_vn" label="Việt-Việt"/>
+      <radio id="td_vt" value="td_vt" label="Viết Tắt"/>
+      </radiogroup>       
+  </groupbox>
+  </vbox>
+  </tabpanel> 
+  
+  <tabpanel>
+  <vbox>
+  <groupbox>
+    <caption label="Phím tắt" />
+	<checkbox preference="pref-use-shortcut" id="use-shortcut" checked="true" label="Sử dụng phím tắt (Ctrl+Z)."/>
+	<checkbox preference="pref-use-ctrlmouse" id="use-ctrlmouse" checked="true" label="Sử dụng tổ hợp Ctrl + Chuột phải."/>
+	<checkbox preference="pref-use-dblclick" id="use-dblclick" checked="true" label="Sử dụng chức năng click đúp (Double Click)."/>
+	<checkbox preference="pref-use-google" id="use-google" checked="true" label="Sử dụng Google dịch đoạn văn bản(hơn 2 từ đơn)"/>
+  </groupbox>
+  </vbox>
+  </tabpanel>
+  
+</tabpanels>
+ 
+</tabbox>
+
+</dialog>
