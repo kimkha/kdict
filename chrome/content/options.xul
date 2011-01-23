@@ -77,7 +77,7 @@
 	<checkbox preference="pref-use-shortcut" id="use-shortcut" checked="true" label="Sử dụng phím tắt (Ctrl+Z)."/>
 	<checkbox preference="pref-use-ctrlmouse" id="use-ctrlmouse" checked="true" label="Sử dụng tổ hợp Ctrl + Chuột phải."/>
 	<checkbox preference="pref-use-dblclick" id="use-dblclick" checked="true" label="Sử dụng chức năng click đúp (Double Click)."/>
-	<checkbox preference="pref-use-google" id="use-google" checked="true" label="Sử dụng Google dịch đoạn văn bản(hơn 2 từ đơn)"/>
+	<checkbox preference="pref-use-google" id="use-google" checked="true" label="Sử dụng Google dịch đoạn văn bản (hơn 2 từ đơn)"/>
   </groupbox>
   </vbox>
   </tabpanel>
