@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>{ac10a760-26ba-11e0-91fa-0800200c9a66}</em:id>
-    <em:name>KDict - Tra từ điển nhanh</em:name>
+    <em:id>{a57fa390-26d5-11e0-91fa-0800200c9a66}</em:id>
+    <em:name>KDict</em:name>
     <em:version>0.1</em:version>
     <em:creator>Nguyễn Kim Kha</em:creator>
     <em:contributor></em:contributor>
-    <em:homepageURL>http://kakalia.co.cc</em:homepageURL>
+    <em:homepageURL>http://code.google.com/p/kdict/</em:homepageURL>
     <em:description>Tiện ích tra từ điển nhanh trên Firefox, với nhiều từ điển từ Tratu.vn</em:description>
     <em:aboutURL>chrome://kdict/content/about.xul</em:aboutURL>
     <em:optionsURL>chrome://kdict/content/options.xul</em:optionsURL>
