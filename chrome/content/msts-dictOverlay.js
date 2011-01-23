@@ -1,4 +1,4 @@
-﻿
+ 
 var appname = "KDict";
 
 //Selected value
@@ -44,7 +44,7 @@ function initPopupLabel(e) {
   
   if (selectedValue != "") {
 	menuLookup.hidden = false;
-    menuLookup.label = "Tra từ điển: \"" + selectedValue + "\"";
+    menuLookup.label = "Tra t\u1EEB \u0111i\u1EC3n: \"" + selectedValue + "\"";
     mouseX = e.pageX;
     mouseY = e.pageY;    
   } else {
@@ -161,7 +161,7 @@ function createDefinitionPanel()
   titleCaption.id='titleCaption';
   titleCaption.setAttribute("style", 
     "float: left; margin: 0px; padding: 2px 5px 1px 5px;");
-  titleCaption.appendChild(focusedWindow.createTextNode('Baamboo-Tra từ "'+trim(selectedValue.substring(0,15))+'"'));
+  titleCaption.appendChild(focusedWindow.createTextNode('KDict - Ngh\u0129a c\u1EE7a t\u1EEB "'+trim(selectedValue.substring(0,15))+'"'));
   titleCaption.style.fontFamily = 'Arial, Verdana, sans-serif';
   titleCaption.style.color = '#000000';
   titleCaption.style.fontSize = '13px';
@@ -195,7 +195,7 @@ function createDefinitionPanel()
   bg.style.overflow = "auto";
   bg.style.padding = "2px 5px 2px 5px";
   bg.align="left";
-  loadingMsg = focusedWindow.createTextNode("Đang lấy dữ liệu...");
+  loadingMsg = focusedWindow.createTextNode("\u0110ang l\u1EA5y d\u1EEF li\u1EC7u...");
   bg.appendChild(loadingMsg);
   
   closeimglink.appendChild(closeimg);
@@ -364,7 +364,7 @@ function processReqChange2() {
 		//show_result(definepanel,res);
 		var definition = "";
 		if (res==null||res=="") {
-			definition = "Không tìm thấy nghĩa của từ này.";
+			definition = "Kh\u00F4ng t\u00ECm th\u1EA5y ngh\u0129a c\u1EE7a t\u1EEB n\u00E0y.";
 		} else {
 			definition = res;
 		}
@@ -382,7 +382,7 @@ function processReqChange2() {
 		
     } else {
 		definepanel.removeChild(loadingMsg);
-		definepanel.appendChild("Có lỗi khi yêu cầu dữ liệu.\n"+req.statusText);
+		definepanel.appendChild("C\u00F3 l\u1ED7i khi y\u00EAu c\u1EA7u d\u1EEF li\u1EC7u.\n"+req.statusText);
         
     }
   }
@@ -399,7 +399,7 @@ function processReqChange() {
 	  //show_result(definepanel,res);
 	var definition = "";
 	if (res==null||res=="") {
-		definition = "Không tìm thấy nghĩa của từ này.";
+		definition = "Kh\u00F4ng t\u00ECm th\u1EA5y ngh\u0129a c\u1EE7a t\u1EEB n\u00E0y.";
 	} else {
 		definition = res;
 	}
@@ -411,13 +411,13 @@ function processReqChange() {
 	def.style.clear		= 'both';
 	def.style.padding = "0px 0px 0px 0px";
 	def.style.margin = "0px 5px 5px 5px";
-	definition = definition + '<br /><hr style="width:100%;color:blue;"><b>Xem thêm tại: <a href="http://tratu.vn/dict/'+dictID+'/'+ selectedValue +'" target="_blank">Baamboo-Tra Từ</a></b>';
+	definition = definition + '<br /><hr style="width:100%;color:blue;"><b>Xem th\u00EAm t\u1EA1i: <a href="http://tratu.vn/dict/'+dictID+'/'+ selectedValue +'" target="_blank">Baamboo-Tra T\u1EEB</a></b>';
 	def.innerHTML = definition + "<br /><br />";
 	definepanel.appendChild(def);
 	
     } else {
 	  definepanel.removeChild(loadingMsg);
-      definepanel.appendChild("Có lỗi khi yêu cầu dữ liệu.\n"+req.statusText);
+      definepanel.appendChild("C\u00F3 l\u1ED7i khi y\u00EAu c\u1EA7u d\u1EEF li\u1EC7u.\n"+req.statusText);
         
     }
   }
