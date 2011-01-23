@@ -1,0 +1,5 @@
+content   kdict                 chrome/content/
+skin      kdict   classic/1.0   chrome/skin/classic/
+locale    kdict   vi-VI         chrome/locale/vi-VI/
+
+overlay   chrome://browser/content/browser.xul   chrome://kdict/content/msts-dictOverlay.xul

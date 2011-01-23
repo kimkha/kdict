@@ -1,0 +1,41 @@
+﻿<?xml version="1.0"  encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://kdict/skin/msts-overlay.css" type="text/css"?>
+<overlay id="msts-dictOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+  <script type="application/x-javascript" src="chrome://kdict/content/msts-dictOverlay.js"/>
+  <script type="application/x-javascript" src="chrome://kdict/content/global.js"/>  
+  <script type="application/x-javascript" src="chrome://kdict/content/aonamanager.js"/>
+  
+  <statusbar id="status-bar">
+    <statusbarpanel id="msts-status"
+    class="statusbarpanel-menu-iconic"
+    status="on"
+    tooltiptext="Baamboo-Tra Từ">
+      <menupopup menugenerated="true">
+      <menuitem label="Tùy chọn..."
+        oncommand="openMSTSOption();"/>
+      <menuseparator/>
+      <menuitem label="Trợ Giúp..."
+        oncommand="goMSTS();"/>
+      <menuitem label="Thông tin Từ Điển"
+        oncommand="openAbout();"/>
+      </menupopup>
+    
+	</statusbarpanel>
+  </statusbar>
+  
+  <popup id="contentAreaContextMenu">
+    <menuitem id="lookup-menu"
+    insertafter="context-searchselect"
+    accesskey="T"
+    oncommand="showDefinitionPanel()"/>
+  </popup>
+ 
+  <keyset>
+    <key id="msts-close-pane" modifiers="shift control" key="M" 
+    oncommand="removePane();"/>
+  </keyset>
+  
+</overlay>
