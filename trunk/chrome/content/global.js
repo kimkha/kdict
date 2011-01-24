@@ -56,8 +56,13 @@ function openMSTSOption() {
                     "chrome,centerscreen,resizable=no");
 }
 
-function goMSTS() {
+function goHomepage() {
   openUILinkIn("http://code.google.com/p/kdict/", "tab", false, null, null);
+}
+
+function goHomepage1() {
+  window.opener.gBrowser.addTab("http://code.google.com/p/kdict/");
+  window.close();
 }
 
 function openAbout() {
