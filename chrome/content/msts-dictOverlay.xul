@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"  encoding="UTF-8"?>
+ <?xml version="1.0"  encoding="UTF-8"?>
 
 <?xml-stylesheet href="chrome://kdict/skin/msts-overlay.css" type="text/css"?>
 <overlay id="msts-dictOverlay"
@@ -12,14 +12,14 @@
     <statusbarpanel id="msts-status"
     class="statusbarpanel-menu-iconic"
     status="on"
-    tooltiptext="Baamboo-Tra Từ">
+    tooltiptext="KDict - Tra từ điển nhanh">
       <menupopup menugenerated="true">
       <menuitem label="Tùy chọn..."
         oncommand="openMSTSOption();"/>
       <menuseparator/>
-      <menuitem label="Trợ Giúp..."
+      <menuitem label="Trợ Giúp"
         oncommand="goMSTS();"/>
-      <menuitem label="Thông tin Từ Điển"
+      <menuitem label="Về KDict"
         oncommand="openAbout();"/>
       </menupopup>
     
