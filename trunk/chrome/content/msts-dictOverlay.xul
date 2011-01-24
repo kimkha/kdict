@@ -20,7 +20,8 @@
       <menuitem label="Trợ Giúp"
         oncommand="goMSTS();"/>
       <menuitem label="Về KDict"
-        oncommand="openAbout();"/>
+        oncommand="openAbout();"
+        image="chrome://kdict/skin/info.png"/>
       </menupopup>
     
 	</statusbarpanel>
