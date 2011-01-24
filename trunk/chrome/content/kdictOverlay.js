@@ -35,7 +35,7 @@ function init() {
     document.getElementById("contentAreaContextMenu")
       .addEventListener("popupshowing", initPopupLabel, false);
   }
-  initMSTSDict();
+  initKDict();
 }
 
 function initPopupLabel(e) {

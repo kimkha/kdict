@@ -21,12 +21,12 @@ var observer = Components.classes["@mozilla.org/observer-service;1"]
         .getService(Components.interfaces.nsIObserverService);
 
 //Something to initialize in global level
-function initMSTSDict() {
-  //observer.addObserver(showMSTSIcon, "SHOW_MSTS_ICON", false);
-  //observer.addObserver(hideMSTSIcon, "HIDE_MSTS_ICON", false);
+function initKDict() {
+  //observer.addObserver(showKDictIcon, "SHOW_KDict_ICON", false);
+  //observer.addObserver(hideKDictIcon, "HIDE_KDict_ICON", false);
   
   var isCheckedIcon = getPreferenceValue(SHOW_ICON, prefs.PREF_INT);
-  enableMSTSIcon(isCheckedIcon==1);
+  enableKDictIcon(isCheckedIcon==1);
     
 }
 
@@ -50,9 +50,9 @@ function isNumeric(num){
   return true;
 }
 
-function openMSTSOption() {
+function openKDictOption() {
   window.openDialog("chrome://kdict/content/options.xul",
-                    "mstsOptions",
+                    "kdictOptions",
                     "chrome,centerscreen,resizable=no");
 }
 
@@ -67,24 +67,24 @@ function goHomepage1() {
 
 function openAbout() {
   window.openDialog("chrome://kdict/content/about.xul",
-                    "mstsAbout",
+                    "kdictAbout",
                     "chrome,centerscreen,resizable=no");
 }
 
-var showMSTSIcon = {
+var showKDictIcon = {
   observe: function() {
-    enableMSTSIcon(true);
+    enableKDictIcon(true);
   }
 };
 
-var hideMSTSIcon = {
+var hideKDictIcon = {
   observe: function() {
-    enableMSTSIcon(false);
+    enableKDictIcon(false);
   }
 };
 
-function enableMSTSIcon(bln) {
-  var elmIcon = document.getElementById("msts-status");
+function enableKDictIcon(bln) {
+  var elmIcon = document.getElementById("kdict-status");
   if (elmIcon!=null) {
     if (bln)
       elmIcon.removeAttribute("hidden");
