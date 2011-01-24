@@ -33,7 +33,7 @@
 		
 		<label value="http://code.google.com/p/kdict/"
           class="text-link"
-          onclick="goMSTS();"/>
+          onclick="goHomepage1();"/>
 		
 		<separator class="thin"/>
 		

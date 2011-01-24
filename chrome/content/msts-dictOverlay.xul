@@ -20,7 +20,7 @@
         image="chrome://kdict/skin/tools.png"/>
       <menuseparator/>
       <menuitem label="Trợ Giúp"
-        oncommand="goMSTS();"
+        oncommand="goHomepage();"
         class="menuitem-iconic"
         image="chrome://kdict/skin/help.png"/>
       <menuitem label="Về KDict"
