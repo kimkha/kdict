@@ -57,7 +57,7 @@ function openMSTSOption() {
 }
 
 function goMSTS() {
-  window.open("http://code.google.com/p/kdict/", "_blank", "");
+  openUILinkIn("http://code.google.com/p/kdict/", "tab", false, null, null);
 }
 
 function openAbout() {
