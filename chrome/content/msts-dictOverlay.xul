@@ -15,13 +15,17 @@
     tooltiptext="KDict - Tra từ điển nhanh">
       <menupopup menugenerated="true">
       <menuitem label="Tùy chọn..."
-        oncommand="openMSTSOption();"/>
+        oncommand="openMSTSOption();"
+        class="menuitem-iconic"
+        image="chrome://kdict/skin/tools.png"/>
       <menuseparator/>
       <menuitem label="Trợ Giúp"
-        oncommand="goMSTS();"/>
+        oncommand="goMSTS();"
+        class="menuitem-iconic"
+        image="chrome://kdict/skin/help.png"/>
       <menuitem label="Về KDict"
         oncommand="openAbout();"
-		class="menuitem-iconic"
+        class="menuitem-iconic"
         image="chrome://kdict/skin/info.png"/>
       </menupopup>
     
@@ -32,7 +36,9 @@
     <menuitem id="lookup-menu"
     insertafter="context-searchselect"
     accesskey="T"
-    oncommand="showDefinitionPanel()"/>
+    oncommand="showDefinitionPanel()"
+    class="menuitem-iconic"
+    image="chrome://kdict/skin/kdict-tiny.png"/>
   </popup>
  
   <keyset>
