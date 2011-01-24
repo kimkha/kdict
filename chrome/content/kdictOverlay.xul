@@ -1,21 +1,21 @@
 <?xml version="1.0"  encoding="UTF-8"?>
 
-<?xml-stylesheet href="chrome://kdict/skin/msts-overlay.css" type="text/css"?>
-<overlay id="msts-dictOverlay"
+<?xml-stylesheet href="chrome://kdict/skin/overlay.css" type="text/css"?>
+<overlay id="kdictOverlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   
-  <script type="application/x-javascript" src="chrome://kdict/content/msts-dictOverlay.js"/>
+  <script type="application/x-javascript" src="chrome://kdict/content/kdictOverlay.js"/>
   <script type="application/x-javascript" src="chrome://kdict/content/global.js"/>  
   <script type="application/x-javascript" src="chrome://kdict/content/aonamanager.js"/>
   
   <statusbar id="status-bar">
-    <statusbarpanel id="msts-status"
+    <statusbarpanel id="kdict-status"
     class="statusbarpanel-menu-iconic"
     status="on"
     tooltiptext="KDict - Tra từ điển nhanh">
       <menupopup menugenerated="true">
       <menuitem label="Tùy chọn..."
-        oncommand="openMSTSOption();"
+        oncommand="openKDictOption();"
         class="menuitem-iconic"
         image="chrome://kdict/skin/tools.png"/>
       <menuseparator/>
@@ -42,7 +42,7 @@
   </popup>
  
   <keyset>
-    <key id="msts-close-pane" modifiers="shift control" key="M" 
+    <key id="kdict-close-pane" modifiers="shift control" key="M" 
     oncommand="removePane();"/>
   </keyset>
   
