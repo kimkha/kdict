@@ -155,7 +155,7 @@ function createDefinitionPanel()
   titlediv.style.width = panelWidth+'px';
   titlediv.style.backgroundColor='#dddddd';
   titlediv.style.cursor = "move";
-  titlediv.style.backgroundImage = "url(http://tratu.vn/plugin/static/bg.gif)";
+  titlediv.style.backgroundImage = "url(http://code.google.com/p/kdict/source/browse/trunk/chrome/skin/classic/bg.gif)";
 
   var titleCaption = focusedWindow.createElement("div");
   titleCaption.id='titleCaption';
@@ -188,7 +188,7 @@ function createDefinitionPanel()
   bg.style.width = (panelWidth-10)+'px';
   bg.style.backgroundColor='#f0f0f0';
   bg.style.backgroundColor='#f0f0f0';
-  bg.style.backgroundImage = "url(http://tratu.vn/plugin/static/bg.png)";
+  bg.style.backgroundImage = "url(http://code.google.com/p/kdict/source/browse/trunk/chrome/skin/classic/bg.png)";
   bg.style.fontSize = fontSize+"px";
   bg.style.fontFamily = 'Arial, Verdana, sans-serif';
   bg.style.color = '#000000';
