@@ -141,7 +141,7 @@ function createDefinitionPanel()
   maindiv.style.left=mouseX+'px';
   maindiv.style.top=mouseY+'px';
   maindiv.style.width=panelWidth+'px';
-  maindiv.style.height=panelHeight+2+'px';
+  maindiv.style.height=(panelHeight+5)+'px';
   maindiv.style.padding='0px';
   maindiv.style.backgroundColor='#fff';
   maindiv.style.margin='5px';
@@ -154,8 +154,8 @@ function createDefinitionPanel()
   titlediv.style.height = '20px';
   titlediv.style.width = panelWidth+'px';
   titlediv.style.backgroundColor='#dddddd';
-  titlediv.style.cursor = "move";
-  titlediv.style.backgroundImage = "url(http://code.google.com/p/kdict/source/browse/trunk/chrome/skin/classic/bg.gif)";
+  //titlediv.style.cursor = "move";
+  titlediv.style.backgroundImage = "url(http://kakalia.co.cc/apps/kdict/bg.gif)";
 
   var titleCaption = focusedWindow.createElement("div");
   titleCaption.id='titleCaption';
@@ -174,7 +174,7 @@ function createDefinitionPanel()
   closeimglink.addEventListener("click", function(){removePane();}, false);
    
   var closeimg=focusedWindow.createElement('img');
-  closeimg.src = 'http://tratu.vn/plugin/static/close.gif';
+  closeimg.src = 'http://kakalia.co.cc/apps/kdict/close.gif';
   closeimg.style.border = '0px';
   closeimg.style.padding='5px';
     
@@ -188,7 +188,7 @@ function createDefinitionPanel()
   bg.style.width = (panelWidth-10)+'px';
   bg.style.backgroundColor='#f0f0f0';
   bg.style.backgroundColor='#f0f0f0';
-  bg.style.backgroundImage = "url(http://code.google.com/p/kdict/source/browse/trunk/chrome/skin/classic/bg.png)";
+  bg.style.backgroundImage = "url(http://kakalia.co.cc/apps/kdict/bg.png)";
   bg.style.fontSize = fontSize+"px";
   bg.style.fontFamily = 'Arial, Verdana, sans-serif';
   bg.style.color = '#000000';
