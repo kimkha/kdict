@@ -10,7 +10,7 @@
     <em:description>Tiện ích tra từ điển nhanh trên Firefox, với nhiều từ điển từ Tratu.vn</em:description>
     <em:aboutURL>chrome://kdict/content/about.xul</em:aboutURL>
     <em:optionsURL>chrome://kdict/content/options.xul</em:optionsURL>
-    <em:iconURL>chrome://kdict/skin/app-icon.gif</em:iconURL>
+    <em:iconURL>chrome://kdict/skin/kdict.png</em:iconURL>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> 
