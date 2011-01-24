@@ -57,7 +57,7 @@ function openMSTSOption() {
 }
 
 function goMSTS() {
-  window.open("http://tratu.vn/", "_blank", "");
+  window.open("http://code.google.com/p/kdict/", "_blank", "");
 }
 
 function openAbout() {
