@@ -27,11 +27,11 @@
 		
 		<separator class="thin"/>
 		
-		<text value="Tiện ích này sử dụng dữ liệu từ Từ điển Tra Từ." />
+		<text value="Xem thêm các thông tin khác trên trang web của dự án:" />
 		
 		<separator class="thin"/>
 		
-		<label value="http://tratu.vn/"
+		<label value="http://code.google.com/p/kdict/"
           class="text-link"
           onclick="goMSTS();"/>
 		
