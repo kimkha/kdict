@@ -137,25 +137,26 @@ function createDefinitionPanel()
   //Create definition panel
   maindiv=focusedWindow.createElement('div');
   maindiv.id='maindiv';
+  maindiv.style.borderRadius = "15px";
+  maindiv.style.boxShadow = "0 0 15px #666";
   maindiv.style.position='absolute';    
   maindiv.style.left=mouseX+'px';
   maindiv.style.top=mouseY+'px';
   maindiv.style.width=panelWidth+'px';
   maindiv.style.height=(panelHeight+5)+'px';
-  maindiv.style.padding='0px';
+  maindiv.style.padding='0 1px 3px';
   maindiv.style.backgroundColor='#fff';
   maindiv.style.margin='5px';
-  maindiv.style.border='1px #787878 solid';
-  maindiv.style.zIndex = "100";
+  maindiv.style.border='2px #CCC solid';
+  maindiv.style.zIndex = "9999";
   
   var titlediv=focusedWindow.createElement('div');
   titlediv.id='titlediv';
   titlediv.style.position='relative';
   titlediv.style.height = '20px';
   titlediv.style.width = panelWidth+'px';
-  titlediv.style.backgroundColor='#dddddd';
+  titlediv.style.backgroundColor='transparent';
   //titlediv.style.cursor = "move";
-  titlediv.style.backgroundImage = "url(http://kakalia.co.cc/apps/kdict/bg.gif)";
 
   var titleCaption = focusedWindow.createElement("div");
   titleCaption.id='titleCaption';
@@ -166,6 +167,8 @@ function createDefinitionPanel()
   titleCaption.style.color = '#000000';
   titleCaption.style.fontSize = '13px';
   titleCaption.style.fontWeight = 'bold';
+  titleCaption.style.width = (panelWidth-20)+'px';
+  titleCaption.style.backgroundColor='transparent';
 
   var closeimglink = focusedWindow.createElement("a");
   closeimglink.setAttribute("href", "javascript:void(0);");
@@ -176,6 +179,7 @@ function createDefinitionPanel()
   var closeimg=focusedWindow.createElement('img');
   closeimg.src = 'http://kakalia.co.cc/apps/kdict/close.gif';
   closeimg.style.border = '0px';
+  closeimg.style.backgroundColor='transparent';
   closeimg.style.padding='5px';
     
   var bg = focusedWindow.createElement('div');
@@ -186,13 +190,12 @@ function createDefinitionPanel()
   bg.style.top='0px';
   bg.style.height = (panelHeight-20-4)+'px';
   bg.style.width = (panelWidth-10)+'px';
-  bg.style.backgroundColor='#f0f0f0';
-  bg.style.backgroundColor='#f0f0f0';
-  bg.style.backgroundImage = "url(http://kakalia.co.cc/apps/kdict/bg.png)";
+  bg.style.backgroundColor='transparent';
   bg.style.fontSize = fontSize+"px";
   bg.style.fontFamily = 'Arial, Verdana, sans-serif';
   bg.style.color = '#000000';
-  bg.style.overflow = "auto";
+  bg.style.overflowY = "auto";
+  bg.style.overflowX = "hidden";
   bg.style.padding = "2px 5px 2px 5px";
   bg.align="left";
   loadingMsg = focusedWindow.createTextNode("\u0110ang l\u1EA5y d\u1EEF li\u1EC7u...");
@@ -211,7 +214,6 @@ function trim(stringToTrim) {
 }
 
 function closeDefinePane(e) {
-
   if (e.keyCode==e.DOM_VK_ESCAPE) {
     removePane();
   } 
@@ -267,7 +269,6 @@ function CtrlMouse(e) {
 	}
 }
 function dblClickProcess(e){
-
 	isUseDblClick = getPreferenceValue(USE_DBLCLICK, prefs.PREF_INT);
 	if (isUseDblClick == 1) 
 	{	
@@ -298,13 +299,12 @@ function removePane() {
     //alert(ex);
   }
 }
-//201008-vietnc add  - Google translate 
+
 function doTranslation(){
 	loadDefinition();
 }
 
 function loadDefinition() {
-   
     // branch for native XMLHttpRequest object
     if(window.XMLHttpRequest && !(window.ActiveXObject)) {
       try {
@@ -345,7 +345,6 @@ function loadDefinition() {
     }
 }
 function parseContent() {
-      
     var result = req.responseText;
     
 	str = 'translatedText":"([^"]*)"';
@@ -354,7 +353,6 @@ function parseContent() {
     return trans = str.match(reg)[1];
 }
 function processReqChange2() {
-
   var definepanel = focusedWindow.getElementById("definepanel");
   
   if (req.readyState == 4) {
@@ -389,7 +387,6 @@ function processReqChange2() {
 }
 
 function processReqChange() {
-
   var definepanel = focusedWindow.getElementById("definepanel");
   
   if (req.readyState == 4) {
@@ -411,8 +408,8 @@ function processReqChange() {
 	def.style.clear		= 'both';
 	def.style.padding = "0px 0px 0px 0px";
 	def.style.margin = "0px 5px 5px 5px";
-	definition = definition + '<br /><hr style="width:100%;color:blue;"><b>Xem th\u00EAm t\u1EA1i: <a href="http://tratu.vn/dict/'+dictID+'/'+ selectedValue +'" target="_blank">Baamboo-Tra T\u1EEB</a></b>';
-	def.innerHTML = definition + "<br /><br />";
+	definition = definition + '<div style="margin:10px 0; padding-top:10px; border-top:1px solid blue;">Xem th\u00EAm t\u1EA1i: <a href="http://tratu.vn/dict/'+dictID+'/'+ selectedValue +'" target="_blank">Baamboo-Tra T\u1EEB</a></div>';
+	def.innerHTML = definition;
 	definepanel.appendChild(def);
 	
     } else {
