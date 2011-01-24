@@ -17,7 +17,7 @@
 	<vbox class="about">
 		<vbox>
 			<hbox style="padding-right: 3px;">
-				<image src="chrome://kdict/skin/app-icon.gif" />
+				<image src="chrome://kdict/skin/kdict.png" />
 			</hbox>
 			<vbox>
 				<text value="KDict - Tra từ điển nhanh" style="font-weight: bold;" />
