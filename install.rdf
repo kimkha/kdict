@@ -3,7 +3,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>{a57fa390-26d5-11e0-91fa-0800200c9a66}</em:id>
     <em:name>KDict</em:name>
-    <em:version>0.1.1</em:version>
+    <em:version>0.1.2</em:version>
     <em:creator>Nguyễn Kim Kha</em:creator>
     <em:contributor></em:contributor>
     <em:homepageURL>http://code.google.com/p/kdict/</em:homepageURL>
