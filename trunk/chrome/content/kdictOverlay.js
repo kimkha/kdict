@@ -45,8 +45,8 @@ function initPopupLabel(e) {
   if (selectedValue != "") {
 	menuLookup.hidden = false;
     menuLookup.label = "Tra t\u1EEB \u0111i\u1EC3n: \"" + selectedValue + "\"";
-    mouseX = e.pageX;
-    mouseY = e.pageY;    
+    mouseX = mouseMX;
+    mouseY = mouseMY;    
   } else {
     menuLookup.hidden = true;
   }  
@@ -113,23 +113,25 @@ function createDefinitionPanel()
   var panelWidth = getPreferenceValue(PANEL_WIDTH, prefs.PREF_INT);
   if (panelWidth == null) panelWidth = DEFAULT_PANEL_WIDTH;
   
+  panelWidth = parseInt(panelWidth);
+  panelHeight = parseInt(panelHeight);
+  
   var fontSize = getPreferenceValue(FONT_SIZE, prefs.PREF_INT);
   if (fontSize == null) fontSize = DEFAULT_FONT_SIZE; 
   
-  if ((focusedWindow.body.scrollTop == 0) && (focusedWindow.lastChild.scrollTop != 0)) {
-	    mouseY += focusedWindow.lastChild.scrollTop;
-  }else {
-	    mouseY += focusedWindow.body.scrollTop;
+  var sW = parseInt(focusedWindow.body.scrollWidth);
+  var sH = parseInt(focusedWindow.body.scrollHeight);
+  
+  if ((mouseX + 16 + panelWidth) >= sW) {
+    mouseX = sW - panelWidth - 16;
+  }
+  if ((mouseY + 19 + panelHeight) >= sH) {
+    mouseY = sH - panelHeight - 19;
   }
   
-  if ((mouseX + 5 + panelWidth) >= window.innerWidth) {
-    mouseX -= panelWidth;
+  if (mouseX <= 0) {
+    mouseX = 0;
   }
-	
-  if ((mouseY + 5 + panelHeight) >= window.innerHeight) {
-    mouseY -= panelHeight;
-  }
-  
   if (mouseY <= 0) {
     mouseY = 0;
   }
@@ -176,6 +178,7 @@ function createDefinitionPanel()
   closeimg.style.width = '20px';
   closeimg.style.height = '20px';
   closeimg.style.fontSize = '20px';
+  closeimg.style.color = '#000';
   closeimg.style.backgroundColor='transparent';
   closeimg.innerHTML = "\u00D7";
   closeimg.addEventListener("click", function(){removePane();}, false);
@@ -198,6 +201,7 @@ function createDefinitionPanel()
   bg.style.overflowX = "hidden";
   bg.style.padding = "2px 5px 2px 5px";
   bg.align="left";
+  bg.innerHTML = mouseY+" a "+mouseMY+" ddd "+sH;
   loadingMsg = focusedWindow.createTextNode("\u0110ang l\u1EA5y d\u1EEF li\u1EC7u...");
   bg.appendChild(loadingMsg);
   
@@ -227,14 +231,6 @@ function keyDownProcess(e){
 				mouseX = mouseMX;
 				mouseY = mouseMY;
 				
-				focusedWindow = document.commandDispatcher.focusedWindow.document;
-  
-				if ((focusedWindow.body.scrollTop == 0) && (focusedWindow.lastChild.scrollTop != 0)) {
-				    mouseY -= focusedWindow.lastChild.scrollTop;
-				} else {
-				    mouseY -= focusedWindow.body.scrollTop;
-				}
-				
 				selectedValue = getSelectedText();
 				showDefinitionPanel();				
 			}
@@ -252,14 +248,6 @@ function CtrlMouse(e) {
 			mouseX = mouseMX;
 			mouseY = mouseMY;
 			
-			focusedWindow = document.commandDispatcher.focusedWindow.document;
-
-			if ((focusedWindow.body.scrollTop == 0) && (focusedWindow.lastChild.scrollTop != 0)) {
-				mouseY -= focusedWindow.lastChild.scrollTop;
-			} else {
-				mouseY -= focusedWindow.body.scrollTop;
-			}
-			
 			selectedValue = getSelectedText();
 			showDefinitionPanel();
 			
@@ -273,14 +261,6 @@ function dblClickProcess(e){
 	{	
 		mouseX = mouseMX;
 		mouseY = mouseMY;
-		
-		focusedWindow = document.commandDispatcher.focusedWindow.document;
-
-		if ((focusedWindow.body.scrollTop == 0) && (focusedWindow.lastChild.scrollTop != 0)) {
-			mouseY -= focusedWindow.lastChild.scrollTop;
-		} else {
-			mouseY -= focusedWindow.body.scrollTop;
-		}
 		
 		selectedValue = getSelectedText();
 		showDefinitionPanel();
