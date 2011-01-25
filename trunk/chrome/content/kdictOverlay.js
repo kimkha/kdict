@@ -201,7 +201,6 @@ function createDefinitionPanel()
   bg.style.overflowX = "hidden";
   bg.style.padding = "2px 5px 2px 5px";
   bg.align="left";
-  bg.innerHTML = mouseY+" a "+mouseMY+" ddd "+sH;
   loadingMsg = focusedWindow.createTextNode("\u0110ang l\u1EA5y d\u1EEF li\u1EC7u...");
   bg.appendChild(loadingMsg);
   
