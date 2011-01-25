@@ -138,7 +138,7 @@ function createDefinitionPanel()
   maindiv=focusedWindow.createElement('div');
   maindiv.id='maindiv';
   maindiv.style.borderRadius = "15px";
-  maindiv.style.boxShadow = "0 0 15px #666";
+  maindiv.style.boxShadow = "5px 5px 10px #666";
   maindiv.style.position='absolute';    
   maindiv.style.left=mouseX+'px';
   maindiv.style.top=mouseY+'px';
@@ -167,21 +167,21 @@ function createDefinitionPanel()
   titleCaption.style.color = '#000000';
   titleCaption.style.fontSize = '13px';
   titleCaption.style.fontWeight = 'bold';
-  titleCaption.style.width = (panelWidth-20)+'px';
+  titleCaption.style.width = (panelWidth-30)+'px';
   titleCaption.style.backgroundColor='transparent';
 
-  var closeimglink = focusedWindow.createElement("a");
-  closeimglink.setAttribute("href", "javascript:void(0);");
-  closeimglink.setAttribute("title", "Close"); 
-  closeimglink.setAttribute("style", "float: right; margin: 0px;");
-  closeimglink.addEventListener("click", function(){removePane();}, false);
-   
-  var closeimg=focusedWindow.createElement('img');
-  closeimg.src = 'http://kakalia.co.cc/apps/kdict/close.gif';
-  closeimg.style.border = '0px';
+  var closeimg = focusedWindow.createElement("div");
+  closeimg.setAttribute("title", "\u0110\u00F3ng l\u1EA1i");
+  closeimg.setAttribute("style", "float: right; margin: -3px 0 0; text-align: center; cursor: pointer;");
+  closeimg.style.width = '20px';
+  closeimg.style.height = '20px';
+  closeimg.style.fontSize = '20px';
   closeimg.style.backgroundColor='transparent';
-  closeimg.style.padding='5px';
-    
+  closeimg.innerHTML = "\u00D7";
+  closeimg.addEventListener("click", function(){removePane();}, false);
+  closeimg.addEventListener("mouseover", function(){this.style.color = "#DD5555";}, false);
+  closeimg.addEventListener("mouseout", function(){this.style.color = "#000";}, false);
+  
   var bg = focusedWindow.createElement('div');
   bg.id = "definepanel";
   bg.style.clear 	= 'both';
@@ -201,9 +201,8 @@ function createDefinitionPanel()
   loadingMsg = focusedWindow.createTextNode("\u0110ang l\u1EA5y d\u1EEF li\u1EC7u...");
   bg.appendChild(loadingMsg);
   
-  closeimglink.appendChild(closeimg);
   titlediv.appendChild(titleCaption);
-  titlediv.appendChild(closeimglink);
+  titlediv.appendChild(closeimg);
   maindiv.appendChild(titlediv);
   maindiv.appendChild(bg);
   
