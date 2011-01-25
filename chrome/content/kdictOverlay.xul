@@ -23,6 +23,10 @@
         oncommand="goHomepage();"
         class="menuitem-iconic"
         image="chrome://kdict/skin/help.png"/>
+      <menuitem label="Báo lỗi/Phản hồi"
+        oncommand="goFeedback();"
+        class="menuitem-iconic"
+        image="chrome://kdict/skin/note.png"/>
       <menuitem label="Về KDict"
         oncommand="openAbout();"
         class="menuitem-iconic"
