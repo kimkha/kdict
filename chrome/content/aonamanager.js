@@ -5,7 +5,7 @@ function AonaManager() {
   this.createURL = createURL;
 
   function createURL(dictID, word) {
-    url = serviceUrl + "dict="+dictID+"&title="+word+"&ver=0.9.53";
+    url = serviceUrl + "dict="+dictID+"&title="+word+"&ver=0.9.55";
     return url;
   }
 
