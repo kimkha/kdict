@@ -60,6 +60,7 @@
       <radio id="jp_vn" value="jp_vn" label="Nhật-Việt"/>
       <radio id="vn_jp" value="vn_jp" label="Việt-Nhật"/>
       <radio id="jp_en" value="jp_en" label="Nhật-Anh"/>
+      <radio id="en_en" value="en_en" label="Anh-Anh"/>
       <radio id="en_jp" value="en_jp" label="Anh-Nhật"/>
       <radio id="fr_vn" value="fr_vn" label="Pháp-Việt"/>
       <radio id="vn_fr" value="vn_fr" label="Việt-Pháp"/>
