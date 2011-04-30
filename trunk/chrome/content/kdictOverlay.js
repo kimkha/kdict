@@ -151,13 +151,17 @@ function createDefinitionPanel()
   maindiv.style.margin='5px';
   maindiv.style.border='2px #CCC solid';
   maindiv.style.zIndex = "9999";
+  maindiv.style.minWidth = "0";
   
   var titlediv=focusedWindow.createElement('div');
   titlediv.id='titlediv';
+  titlediv.style.margin = "0";
+  titlediv.style.padding = "0";
   titlediv.style.position='relative';
   titlediv.style.height = '20px';
   titlediv.style.width = panelWidth+'px';
   titlediv.style.backgroundColor='transparent';
+  titlediv.style.minWidth = "0";
   //titlediv.style.cursor = "move";
 
   var titleCaption = focusedWindow.createElement("div");
@@ -169,12 +173,14 @@ function createDefinitionPanel()
   titleCaption.style.color = '#000000';
   titleCaption.style.fontSize = '13px';
   titleCaption.style.fontWeight = 'bold';
+  titleCaption.style.minWidth = "0";
   titleCaption.style.width = (panelWidth-30)+'px';
   titleCaption.style.backgroundColor='transparent';
 
   var closeimg = focusedWindow.createElement("div");
   closeimg.setAttribute("title", "\u0110\u00F3ng l\u1EA1i");
   closeimg.setAttribute("style", "float: right; margin: -3px 0 0; text-align: center; cursor: pointer;");
+  closeimg.style.minWidth = "0";
   closeimg.style.width = '20px';
   closeimg.style.height = '20px';
   closeimg.style.fontSize = '20px';
@@ -187,7 +193,9 @@ function createDefinitionPanel()
   
   var bg = focusedWindow.createElement('div');
   bg.id = "definepanel";
-  bg.style.clear 	= 'both';
+  bg.style.margin = "0";
+  bg.style.padding = "0";
+  bg.style.clear = 'both';
   bg.style.position='relative';
   bg.style.left='0px';
   bg.style.top='0px';
