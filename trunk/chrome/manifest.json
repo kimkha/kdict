@@ -1,0 +1,13 @@
+{
+  "name": "KDict",
+  "description": "Translate words from English to Vietnamese",
+  "version": "0.1",
+  "content_scripts": [{
+  	"js": [ "script.js" ],
+  	"matches": ["http://*/*", "https://*/*"],
+  	"run_at": "document_idle",
+  	"all_frames": true
+  }],
+  "permissions": ["contextMenus", "tabs", "https://kaworldia.appspot.com"],
+  "background_page": "background.html"
+}
