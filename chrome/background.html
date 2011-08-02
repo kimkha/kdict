@@ -1,0 +1,12 @@
+<script>
+
+function translate(info, tab) {
+	var text = info.selectionText;
+	chrome.tabs.getSelected(null, function(tab) {
+		chrome.tabs.sendRequest(tab.id, {selectedText: text}, null);
+	});
+}
+
+chrome.contextMenus.create({"title": "Translate '%s' to Vietnamese", "contexts":["selection"],
+                                       "onclick": translate});
+</script>
