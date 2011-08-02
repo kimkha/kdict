@@ -2,6 +2,9 @@
   "name": "KDict",
   "description": "Translate words from English to Vietnamese",
   "version": "0.1",
+  "icons": { "16": "images/kdict-tiny.png",
+           "48": "images/kdict.png"
+  },
   "content_scripts": [{
   	"js": [ "script.js" ],
   	"matches": ["http://*/*", "https://*/*"],
