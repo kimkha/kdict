@@ -11,7 +11,7 @@ function fetchMeaning(text) {
     }
   }
   
-  var url = 'https://kaworldia.appspot.com/kdict/en_vn/' + text;
+  var url = 'http://kaworldia.appspot.com/kdict/en_vn/' + text;
   xhr.open('GET', url, true);
   xhr.send();
 }
@@ -89,7 +89,7 @@ function callTranslate(request, sender, sendResponse) {
 	root.appendChild(head);
 	root.appendChild(close);
 	root.appendChild(content);
-	document.body.parentElement.insertBefore(root, document.body);
+	document.getElementsByTagName('body')[0].appendChild(root);
 }
 
 chrome.extension.onRequest.addListener(callTranslate);

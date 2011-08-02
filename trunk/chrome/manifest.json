@@ -7,11 +7,11 @@
           "128": "icon128.png"
   },
   "content_scripts": [{
-  	"js": [ "script.js" ],
-  	"matches": ["http://*/*", "https://*/*"],
-  	"run_at": "document_idle",
+  	"js": [ "kdict.js" ],
+  	"matches": ["<all_urls>"],
+  	"run_at": "document_start",
   	"all_frames": true
   }],
-  "permissions": ["contextMenus", "tabs", "https://kaworldia.appspot.com"],
+  "permissions": ["contextMenus", "tabs", "https://kaworldia.appspot.com", "http://kaworldia.appspot.com"],
   "background_page": "background.html"
 }
