@@ -11,7 +11,7 @@ function fetchMeaning(text) {
     }
   }
   
-  var url = 'http://kaworldia.appspot.com/kdict/en_vn/' + text;
+  var url = 'https://kaworldia.appspot.com/kdict/en_vn/' + text;
   xhr.open('GET', url, true);
   xhr.send();
 }
