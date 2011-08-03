@@ -21,13 +21,16 @@ function onReceive(data) {
 		var el = document.getElementById("extension-kdict-content");
 		if (el) {
 			el.innerHTML = unescape(data);
+			var list = el.getElementsByTagName("a"), a;
+			for (var i = 0; i < list.length; i++) {
+				list[i].href = "javascript:;";
+				list[i].addEventListener("click", function(e){
+					run(e.target.innerText);
+				}, false);
+			}
 		}
 	}
 };
-
-function kdict_update(el) {
-	run(el.innerText);
-}
 
 function callTranslate(request, sender, sendResponse) {
 	run(request.selectedText);
@@ -80,10 +83,10 @@ function run(text) {
 			'float: right;',
 			'cursor: pointer;'
 		].join(' ');
-		close.onclick = function() {
+		close.addEventListener("click", function(e){
 			var el = document.getElementById("extension-kdict-root");
 			el.parentNode.removeChild(el);
-		}
+		}, false);
 	
 		content.id = "extension-kdict-content";
 		content.style.cssText = [
