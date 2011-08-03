@@ -27,7 +27,6 @@ function onReceive(data) {
 
 function callTranslate(request, sender, sendResponse) {
 	var text = request.selectedText;
-	fetchMeaning(text);
 	
 	var root = document.getElementById("extension-kdict-root");
 	var head = document.getElementById("extension-kdict-head");
@@ -98,6 +97,8 @@ function callTranslate(request, sender, sendResponse) {
 	
 	head.innerText = "Nghĩa của từ: '" + text + "'";
 	content.innerHTML = "Đang đọc dữ liệu...";
+	
+	fetchMeaning(text);
 }
 
 chrome.extension.onRequest.addListener(callTranslate);
