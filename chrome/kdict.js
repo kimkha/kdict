@@ -18,7 +18,7 @@ function fetchMeaning(text) {
 
 function onReceive(data) {
 	if (data) {
-		var el = document.getElementById("kdict-content");
+		var el = document.getElementById("extension-kdict-content");
 		if (el) {
 			el.innerHTML = unescape(data);
 		}
@@ -29,67 +29,75 @@ function callTranslate(request, sender, sendResponse) {
 	var text = request.selectedText;
 	fetchMeaning(text);
 	
-	var root = document.createElement('div');
-	var head = document.createElement('div');
-	var content = document.createElement('div');
-	var close = document.createElement('div');
+	var root = document.getElementById("extension-kdict-root");
+	var head = document.getElementById("extension-kdict-head");
+	var content = document.getElementById("extension-kdict-content");
 	
-	var closeImg = chrome.extension.getURL("images/close.gif");
+	if (root == null) {
+		root = document.createElement('div');
+		head = document.createElement('div');
+		content = document.createElement('div');
+		var close = document.createElement('div');
 	
-	root.id = "kdict-root";
-	root.style.cssText = [
-	  'background-color: #CCEFFF;',
-	  'background-image: -webkit-repeating-linear-gradient(' +
-	      '45deg, transparent, transparent 35px,' +
-	      'rgba(150,150,150,.1) 35px, rgba(150,150,150,.1) 70px);',
-	  'color: #000;',
-	  'width: 300px;',
-	  'font: 14px Arial;',
-	  'position: fixed;',
-	  'top: 20px;',
-	  'left: 20px;',
-	  'z-index: 10000;'
-	].join(' ');
+		var closeImg = chrome.extension.getURL("images/close.gif");
 	
-	head.style.cssText = [
-		'width: 275px;',
-		'font-size: 15px;',
-		'font-weight: bold;',
-		'padding: 0 5px;',
-		'display: block;',
-		'float: left;'
-	].join(' ');
-	head.innerText = "Nghĩa của từ: '" + text + "'";
+		root.id = "extension-kdict-root";
+		root.style.cssText = [
+		  'background-color: #CCEFFF;',
+		  'background-image: -webkit-repeating-linear-gradient(' +
+			  '45deg, transparent, transparent 35px,' +
+			  'rgba(150,150,150,.1) 35px, rgba(150,150,150,.1) 70px);',
+		  'color: #000;',
+		  'width: 300px;',
+		  'font: 14px Arial;',
+		  'position: fixed;',
+		  'top: 15px;',
+		  'left: 15px;',
+		  'z-index: 10000;'
+		].join(' ');
+		
+		head.id = "extension-kdict-head";
+		head.style.cssText = [
+			'width: 275px;',
+			'font-size: 15px;',
+			'font-weight: bold;',
+			'padding: 0 5px;',
+			'display: block;',
+			'float: left;'
+		].join(' ');
 	
-	close.innerHTML = "<img src='" + closeImg + "' border=0 style='margin:0;padding:0;width:10px;height:10px;' />";
-	close.style.cssText = [
-		'width: 12px;',
-		'height: 12px;',
-		'padding: 3px 0 0 0;',
-		'display: block;',
-		'float: right;',
-		'cursor: pointer;'
-	].join(' ');
-	close.onclick = function() {
-		var el = document.getElementById("kdict-root");
-		el.parentNode.removeChild(el);
+		close.innerHTML = "<img src='" + closeImg + "' border=0 style='margin:0;padding:0;width:10px;height:10px;' />";
+		close.style.cssText = [
+			'width: 12px;',
+			'height: 12px;',
+			'padding: 3px 0 0 0;',
+			'display: block;',
+			'float: right;',
+			'cursor: pointer;'
+		].join(' ');
+		close.onclick = function() {
+			var el = document.getElementById("extension-kdict-root");
+			el.parentNode.removeChild(el);
+		}
+	
+		content.id = "extension-kdict-content";
+		content.style.cssText = [
+			'height: 160px;',
+			'width: 270px;',
+			'overflow-y: auto;',
+			'clear: both;',
+			'padding: 10px;',
+			'margin: 5px;'
+		].join(' ');
+	
+		root.appendChild(head);
+		root.appendChild(close);
+		root.appendChild(content);
+		document.getElementsByTagName('body')[0].appendChild(root);
 	}
 	
-	content.id = "kdict-content";
-	content.style.cssText = [
-		'height: 160px;',
-		'width: 270px;',
-		'overflow-y: auto;',
-		'clear: both;',
-		'padding: 10px;',
-		'margin: 5px;'
-	].join(' ');
+	head.innerText = "Nghĩa của từ: '" + text + "'";
 	content.innerHTML = "Đang đọc dữ liệu...";
-	
-	root.appendChild(head);
-	root.appendChild(close);
-	root.appendChild(content);
-	document.getElementsByTagName('body')[0].appendChild(root);
 }
 
 chrome.extension.onRequest.addListener(callTranslate);
