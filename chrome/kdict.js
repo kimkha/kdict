@@ -25,9 +25,15 @@ function onReceive(data) {
 	}
 };
 
+function kdict_update(el) {
+	run(el.innerText);
+}
+
 function callTranslate(request, sender, sendResponse) {
-	var text = request.selectedText;
-	
+	run(request.selectedText);
+}
+
+function run(text) {
 	var root = document.getElementById("extension-kdict-root");
 	var head = document.getElementById("extension-kdict-head");
 	var content = document.getElementById("extension-kdict-content");
