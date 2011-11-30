@@ -10,8 +10,8 @@ function fetchMeaning(text) {
       }
     }
   }
-  
-  var url = 'https://kaworldia.appspot.com/kdict/en_vn/' + text;
+  var protocol = document.location.protocol || "http:";
+  var url = protocol + '//kaworldia.appspot.com/kdict/en_vn/' + text;
   xhr.open('GET', url, true);
   xhr.send();
 }
@@ -37,6 +37,17 @@ function callTranslate(request, sender, sendResponse) {
 }
 
 function run(text) {
+	if (window.top !== window.self && window.self.frameElement) {
+		// In a frame
+		var frame = window.self.frameElement;
+		if (frame.nodeName.toLowerCase() == "iframe") {
+			// In a iframe
+			return;
+		}
+	} else if (window.self.innerHeight < 160 || window.self.innerWidth < 270) {
+		return;
+	}
+
 	var root = document.getElementById("extension-kdict-root");
 	var head = document.getElementById("extension-kdict-head");
 	var content = document.getElementById("extension-kdict-content");
