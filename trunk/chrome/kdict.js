@@ -72,8 +72,9 @@ function run(text) {
 		  'position: fixed;',
 		  'top: 15px;',
 		  'left: 15px;',
-		  'z-index: 10000;'
-		].join(' ');
+		  'z-index: 10000;',
+		  'text-align: left;'
+		].join('');
 		
 		head.id = "extension-kdict-head";
 		head.style.cssText = [
@@ -83,7 +84,7 @@ function run(text) {
 			'padding: 0 5px;',
 			'display: block;',
 			'float: left;'
-		].join(' ');
+		].join('');
 	
 		close.innerHTML = "<img src='" + closeImg + "' border=0 style='margin:0;padding:0;width:10px;height:10px;' />";
 		close.style.cssText = [
@@ -93,7 +94,7 @@ function run(text) {
 			'display: block;',
 			'float: right;',
 			'cursor: pointer;'
-		].join(' ');
+		].join('');
 		close.addEventListener("click", function(e){
 			var el = document.getElementById("extension-kdict-root");
 			el.parentNode.removeChild(el);
@@ -107,7 +108,7 @@ function run(text) {
 			'clear: both;',
 			'padding: 10px;',
 			'margin: 5px;'
-		].join(' ');
+		].join('');
 	
 		root.appendChild(head);
 		root.appendChild(close);
